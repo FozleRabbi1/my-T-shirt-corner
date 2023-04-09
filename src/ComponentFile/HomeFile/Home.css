@@ -7,6 +7,18 @@
     padding: 10px 20px;
     /* max-height: 1000px; */
 }
+.addStyle{
+    color: red;
+    background-color: green;
+}
+.removeStyle{
+    color: green;
+    background: #000;
+}
+.addMoneStyle{
+    color: white;
+    background-color: blue;
+}
 
 @media (max-width:767px) {
     .data-main-container{

@@ -43,7 +43,7 @@ const Home = () => {
 
             <div className="order-summery">
                 {/* <div className="order-summery  p-10 sticky top-10"> */}
-                <h2>Order summery here</h2>
+                <h2 className={`${addData.length === 0 ? "addStyle" : "removeStyle"} ${addData.length >= 3 && "addMoneStyle"}` } >Order summery here</h2>
 
                 {/* {
                     addData.map(data => <li> name : {data.name} <button onClick={() => handleDeleteCart(data._id)} >X</button> </li>)
