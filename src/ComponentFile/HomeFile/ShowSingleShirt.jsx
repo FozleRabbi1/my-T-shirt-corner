@@ -1,8 +1,8 @@
 import React from 'react';
 import "./SIngleCart.css";
 
-const ShowSingleShirt = ({ data }) => {
-    console.log(data)
+const ShowSingleShirt = ({ data, addTocartFun }) => {
+    // console.log(data)
     const { gender, name, index, picture, price, _id } = data;
 
     return (
@@ -12,7 +12,13 @@ const ShowSingleShirt = ({ data }) => {
                 <div class="block-1">
                     <img src={picture} />
                     <div className="button-div ">
-                        <button>add to cart</button>
+                        <div className="info-div">
+                            <p>gender : {gender ? gender : "No data"}</p>
+                            <p>Name : {name}</p>
+                            <p>price : {price} $</p>
+                            
+                        </div>
+                        <button onClick={()=>addTocartFun(data)}>add to cart</button>
                     </div>
                 </div>
 

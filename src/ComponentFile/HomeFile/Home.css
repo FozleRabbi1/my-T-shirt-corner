@@ -1,0 +1,17 @@
+.data-main-container{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+.order-summery{
+    /* background-color: aqua; */
+    padding: 10px 20px;
+    /* max-height: 1000px; */
+}
+
+@media (max-width:767px) {
+    .data-main-container{
+        display: grid;
+        grid-template-columns:1fr;
+    }    
+
+}

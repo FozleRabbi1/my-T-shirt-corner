@@ -1,7 +1,7 @@
 
 .single-cart-style {
+    /* width: 280px; */
     height: 370px;
-    width: 320px;
     position: relative;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
@@ -17,7 +17,7 @@
 }
 .button-div{
     position: absolute;
-    bottom: -50px;
+    bottom: -120px;
     border: 1px solid aqua;
     padding: 4px 10px;
     border-radius: 5px;
@@ -33,7 +33,21 @@
 }
 .button-div:hover{
     background-color: rgba(0,0,0,0.5);
-    color: white;
+    /* color: white; */
+}
+.button-div button{
+    padding: 2px 0;
+    transition: all 0.5s;
+}
+.button-div:hover button{
+    background-color: rgba(0,0,0,0.8);
+    width: 100%;
+    border-radius: 5px;
+    padding: 2px 0;
+    /* color: lightgreen; */
+}
+.button-div button:hover{
+    color: rgb(241, 40, 50);
 }
 
 .block-1 img {
@@ -87,19 +101,19 @@
 }
 
 .block:hover .block-2 {
-    transform: rotate(-10deg);
+    transform: rotate(-5deg);
 }
 
 .block:hover .block-3 {
-    transform: rotate(-20deg);
+    transform: rotate(-10deg);
 }
 
 .block:hover .block-4 {
-    transform: rotate(-30deg);
+    transform: rotate(-15deg);
 }
 
 .block:hover .block-5 {
-    transform: rotate(-40deg);
+    transform: rotate(-20deg);
 }
 
 

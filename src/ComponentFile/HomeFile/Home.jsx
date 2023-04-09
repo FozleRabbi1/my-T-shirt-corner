@@ -1,22 +1,58 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import ShowSingleShirt from './ShowSingleShirt';
+import "./Home.css";
 
 const Home = () => {
+    const [addData, setAddData] = useState([])
     const getShirtData = useLoaderData();
     const datas = JSON.parse(getShirtData);
-    console.log(datas)
+    // console.log(datas)
+    const addTocartFun = (data) => {
+
+        const alreadyExixt = addData.find(d => d._id === data._id)
+        if (alreadyExixt) {
+            alert("data already exist");
+            return
+        } else {
+            const newData = [...addData, data];
+            setAddData(newData)
+        }
+
+    }
+    const handleDeleteCart = (id) => {
+        console.log(id)
+        const remaining = addData.filter(data => data._id !== id);
+        setAddData(remaining)
+    }
 
     return (
-        <div>
+        <div className=' data-main-container mx-auto my-10 '>
 
-            <div className="main-dive grid w-11/12 mx-auto my-10 justify-center md:grid-cols-2 lg:grid-cols-3 gap-y-8 gap-x-28">
+            {/* <div className="main-div grid justify-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 "> */}
+            <div className="main-div grid justify-center grid-cols-1 md:mx-0  md:grid-cols-2 lg:grid-cols-3 gap-y-12 md:gap-x-14">
                 {
                     datas?.map(data => <ShowSingleShirt
                         data={data}
+                        addTocartFun={addTocartFun}
+                        handleDeleteCart={handleDeleteCart}
                     ></ShowSingleShirt>)
                 }
 
+            </div>
+
+            <div className="order-summery">
+                {/* <div className="order-summery  p-10 sticky top-10"> */}
+                <h2>Order summery here</h2>
+
+                {/* {
+                    addData.map(data => <li> name : {data.name} <button onClick={() => handleDeleteCart(data._id)} >X</button> </li>)
+                } */}
+                <div>
+                    {
+                        addData.length === 0 ? <p>Enter some product</p> : addData.map(data => <li> name : {data.name} <button onClick={() => handleDeleteCart(data._id)} >X</button> </li>)
+                    }
+                </div>
             </div>
         </div>
     );
